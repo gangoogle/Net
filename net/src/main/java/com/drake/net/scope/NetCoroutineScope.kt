@@ -97,7 +97,7 @@ open class NetCoroutineScope(
     }
 
     override fun catch(e: Throwable) {
-        catch?.invoke(this@NetCoroutineScope, e) ?: if (!previewBreakError) handleError(e)
+        catch?.invoke(this@NetCoroutineScope, e) ?: if (!previewBreakError) handleError(e) else {}
     }
 
     /**
